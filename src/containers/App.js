@@ -1,7 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import List from '../components/List/List';
+import Search from '../components/Search/Search';
 
-const list = [
+const App = () => 
+{
+  const stories = [
     {
       title: 'React',
       url: 'https://reactjs.org/',
@@ -20,23 +23,24 @@ const list = [
     },
   ];
 
-class App extends Component
-{
-    state = {
-        list: list
-    }
+  const [searchTerm, setSearchTerm] = React.useState('React');
+
+  const handleSearch = event => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredStories = stories.filter((story,index) =>{
+    return story.title.toLowerCase().includes(searchTerm.toLowerCase());
+  })
     
-	render(){
-        return(
-            <div className="App">
-              <h1>My Hacker Stories</h1>
-              <label htmlFor="search">Search: </label>
-              <input id="search" type="text" />
-              <hr />
-              <List list={this.state.list}/>
-            </div>
-        )
-    }
+  return(
+      <div className="App">
+        <h1>My Hacker Stories</h1>
+        <Search search={searchTerm} onSearch={handleSearch}/>
+        <hr/>
+        <List list={filteredStories}/>
+      </div>
+  )
 }
 
 export default App;
