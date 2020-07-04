@@ -35,3 +35,11 @@ export const useSemiPersistentState = (key, initialState) => {
 export const SET_STORIES = "SET_STORIES";
 
 export const REMOVE_STORY = "REMOVE_STORY";
+
+export const STORIES_FETCH_FAILURE = "STORIES_FETCH_FAILURE";
+
+export const STORIES_FETCH_INIT = "STORIES_FETCH_INIT";
+
+export const STORIES_FETCH_SUCCESS = "STORIES_FETCH_SUCCESS";
+
+
