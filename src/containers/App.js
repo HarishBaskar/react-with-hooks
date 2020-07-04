@@ -17,7 +17,7 @@ const useSemiPersistentState = (key, initialState) => {
 
 const App = () => 
 {
-  const stories = [
+  const initialStories = [
     {
       title: 'React',
       url: 'https://reactjs.org/',
@@ -42,20 +42,53 @@ const App = () =>
     setSearchTerm(event.target.value);
     };
 
+  const [stories, setStories] = React.useState([]);
+
+  const [isLoading, setIsLoadig] = React.useState(false);
+
+  const [isError, setIsError] = React.useState(false);
+
+  const getAsyncStories = () => 
+        new Promise((resolve, reject) => 
+        setTimeout(
+          () => resolve({ data: {stories: initialStories}}), 
+          2000
+        )
+      );
+
   React.useEffect(() => {
-    localStorage.setItem('search', searchTerm);
-  }, [searchTerm]);
+    setIsLoadig(true);
+    getAsyncStories().then(result => {
+      setStories(result.data.stories);
+      setIsLoadig(false);
+    }).catch(() => setIsError(true))
+  }, []);
+  
+  const handleRemoveStory = item => {
+    const newStories = stories.filter(
+      story => {return ( item.objectID !== story.objectID)}
+    );
+    setStories(newStories);
+  };
 
   const filteredStories = stories.filter((story,index) =>{
     return story.title.toLowerCase().includes(searchTerm.toLowerCase());
-  })
+  });
     
   return(
       <div className="App">
         <h1>My Hacker Stories</h1>
-        <Search search={searchTerm} onSearch={handleSearch}/>
+        <Search id="search" 
+                search={searchTerm} 
+                onSearch={handleSearch}
+                isFocused={true}>
+                <strong>Search: </strong>
+        </Search>
         <hr/>
-        <List list={filteredStories}/>
+        {isError && <p>Something went wrong....</p>}
+        { isLoading ? (<p>Please wait, data is loading...</p>) : 
+                      (<List list={filteredStories} onRemoveItem={handleRemoveStory}/>)}
+        
       </div>
   )
 }

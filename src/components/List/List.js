@@ -1,7 +1,10 @@
 import React from 'react';
 
-const List = ({list}) => {
-    const newlist = list.map((item,index)=> <Item key={item.objectID} item={item}/>);
+const List = ({list, onRemoveItem}) => {
+    const newlist = list.map((item,index) => 
+        <Item key={item.objectID} 
+              onRemoveItem = {onRemoveItem}
+              item={item}/>);
 
     return(
         <div>
@@ -10,7 +13,7 @@ const List = ({list}) => {
     )
 }
 
-const Item = ({item}) => {
+const Item = ({item, onRemoveItem}) => {
   return(
       <div>
         <span>Title: {item.title}</span>
@@ -23,6 +26,7 @@ const Item = ({item}) => {
         <br/>
         <span>Points: {item.points}</span>
         <br/>
+        <button onClick={() => onRemoveItem(item)}>Delete item</button>
     </div>
   )
 }

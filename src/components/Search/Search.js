@@ -1,13 +1,26 @@
 import React from 'react';
 
-const search = ({search, onSearch}) => {
+const search = ({search, onSearch, children, id, isFocused}) => {
+    const inputRef = React.useRef();
+
+    React.useEffect(() => {
+        if (isFocused) 
+        {
+            inputRef.current.focus();
+        }
+    }, [isFocused]);
+
     return(
-        <div>
-            <label htmlFor="search">Search: </label>
-            <input id="search" type="text" value={search} onChange={onSearch}/>
+        <>
+            <label htmlFor={id}>{children}</label>
+            <input id={id} 
+                ref={inputRef}
+                type="text" 
+                value={search} 
+                onChange={onSearch}/>
             <hr />
             <p>Searching for: {search ? search : null} </p> 
-        </div>
+        </>
     )
 }
 
