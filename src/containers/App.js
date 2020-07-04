@@ -1,12 +1,12 @@
 import React from 'react';
 import List from '../components/List/List';
 import Search from '../components/Search/Search';
-import { initialStories, 
-          useSemiPersistentState, 
+import { useSemiPersistentState, 
           REMOVE_STORY,
           STORIES_FETCH_FAILURE,
           STORIES_FETCH_INIT,
-          STORIES_FETCH_SUCCESS } from '../Constants/Constants';
+          STORIES_FETCH_SUCCESS,
+          API_ENDPOINT } from '../Constants/Constants';
 import { storiesReducer } from '../Reducers/Reducers';
 
 const App = () => 
@@ -19,22 +19,17 @@ const App = () =>
 
   const [stories, dispatchStories] = React.useReducer(storiesReducer, { data: [], isLoading: false, isError: false});
 
-  const getAsyncStories = () => 
-    new Promise((resolve, reject) => 
-    setTimeout(
-      () => resolve({ data: {stories: initialStories}}), 
-      2000
-    )
-  );
-
   React.useEffect(() => {
-    dispatchStories({type: STORIES_FETCH_INIT})
-    getAsyncStories().then(result => {
-      dispatchStories({
-        type: STORIES_FETCH_SUCCESS,
-        payload: result.data.stories
-      })
-    }).catch(() => dispatchStories({ type: STORIES_FETCH_FAILURE}) )
+    dispatchStories({type: STORIES_FETCH_INIT});
+    fetch(`${API_ENDPOINT}react`)
+        .then(response => response.json())
+        .then(result => {
+            dispatchStories({
+              type: STORIES_FETCH_SUCCESS,
+              payload: result.hits
+            });
+        })
+        .catch(() => dispatchStories({ type: STORIES_FETCH_FAILURE}) )
   }, []);
   
   const handleRemoveStory = item => {
