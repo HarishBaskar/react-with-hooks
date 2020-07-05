@@ -19,6 +19,12 @@ const App = () =>
 
   const [stories, dispatchStories] = React.useReducer(storiesReducer, { data: [], isLoading: false, isError: false});
 
+  const [url, setUrl] = React.useState(`${API_ENDPOINT}${searchTerm}`);
+
+  const handleButtonSubmit = () => {
+    setUrl(`${API_ENDPOINT}${searchTerm}`);
+  }
+
   const handleFetchedStories = React.useCallback(() => {
     if(searchTerm === '')
     {
@@ -26,7 +32,7 @@ const App = () =>
     }
 
     dispatchStories({type: STORIES_FETCH_INIT});
-    fetch(`${API_ENDPOINT}${searchTerm}`)
+    fetch(url)
         .then(response => response.json())
         .then(result => {
             dispatchStories({
@@ -35,7 +41,7 @@ const App = () =>
             });
         })
         .catch(() => dispatchStories({ type: STORIES_FETCH_FAILURE}) )
-  }, [searchTerm])
+  }, [url])
 
   React.useEffect(() => {
     handleFetchedStories();
@@ -58,7 +64,8 @@ const App = () =>
         <Search id="search" 
                 search={searchTerm} 
                 onSearch={handleSearch}
-                isFocused={true}>
+                isFocused={true}
+                onButtonClick={handleButtonSubmit}>
                 <strong>Search: </strong>
         </Search>
         <hr/>

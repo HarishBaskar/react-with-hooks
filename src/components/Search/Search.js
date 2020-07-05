@@ -1,6 +1,6 @@
 import React from 'react';
 
-const search = ({search, onSearch, children, id, isFocused}) => {
+const search = ({search, onSearch, children, id, isFocused, onButtonClick}) => {
     const inputRef = React.useRef();
 
     React.useEffect(() => {
@@ -18,8 +18,10 @@ const search = ({search, onSearch, children, id, isFocused}) => {
                 type="text" 
                 value={search} 
                 onChange={onSearch}/>
+            &nbsp;
+            <button type="button" disabled={!search} onClick={onButtonClick}>Search</button>
+            <p><strong>Searching for: </strong>{search ? search : null} </p> 
             <hr />
-            <p>Searching for: {search ? search : null} </p> 
         </>
     )
 }
