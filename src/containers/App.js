@@ -1,13 +1,14 @@
 import React from 'react';
 import List from '../components/List/List';
-import Search from '../components/Search/Search';
-import { initialStories, 
-          useSemiPersistentState, 
+import SearchForm from '../components/SearchForm/SearchForm';
+import { useSemiPersistentState, 
           REMOVE_STORY,
           STORIES_FETCH_FAILURE,
           STORIES_FETCH_INIT,
-          STORIES_FETCH_SUCCESS } from '../Constants/Constants';
+          STORIES_FETCH_SUCCESS,
+          API_ENDPOINT } from '../Constants/Constants';
 import { storiesReducer } from '../Reducers/Reducers';
+import axios from 'axios';
 
 const App = () => 
 {
@@ -19,23 +20,37 @@ const App = () =>
 
   const [stories, dispatchStories] = React.useReducer(storiesReducer, { data: [], isLoading: false, isError: false});
 
-  const getAsyncStories = () => 
-    new Promise((resolve, reject) => 
-    setTimeout(
-      () => resolve({ data: {stories: initialStories}}), 
-      2000
-    )
-  );
+  const [url, setUrl] = React.useState(`${API_ENDPOINT}${searchTerm}`);
 
-  React.useEffect(() => {
-    dispatchStories({type: STORIES_FETCH_INIT})
-    getAsyncStories().then(result => {
+  const handleButtonSubmit = () => {
+    setUrl(`${API_ENDPOINT}${searchTerm}`);
+  }
+
+  const handleFetchedStories = React.useCallback( async () => {
+    if(searchTerm === '')
+    {
+      return;
+    }
+
+    dispatchStories({type: STORIES_FETCH_INIT});
+
+    try
+    {
+      const result = await axios.get(url);
       dispatchStories({
         type: STORIES_FETCH_SUCCESS,
-        payload: result.data.stories
-      })
-    }).catch(() => dispatchStories({ type: STORIES_FETCH_FAILURE}) )
-  }, []);
+        payload: result.data.hits
+      });
+    }
+    catch
+    {
+      dispatchStories({ type: STORIES_FETCH_FAILURE})
+    }
+  }, [url])
+
+  React.useEffect(() => {
+    handleFetchedStories();
+  }, [handleFetchedStories]);
   
   const handleRemoveStory = item => {
     dispatchStories({
@@ -43,24 +58,21 @@ const App = () =>
       payload: item
     })
   };
-
-  const filteredStories = stories.data.filter((story,index) =>{
-    return story.title.toLowerCase().includes(searchTerm.toLowerCase());
-  });
     
   return(
       <div className="App">
         <h1>My Hacker Stories</h1>
-        <Search id="search" 
+        <SearchForm id="search" 
                 search={searchTerm} 
                 onSearch={handleSearch}
-                isFocused={true}>
+                isFocused={true}
+                onFormSubmit={handleButtonSubmit}>
                 <strong>Search: </strong>
-        </Search>
+        </SearchForm>
         <hr/>
         {stories.isError && <p>Something went wrong....</p>}
         { stories.isLoading ? (<p>Please wait, data is loading...</p>) : 
-                      (<List list={filteredStories} onRemoveItem={handleRemoveStory}/>)}
+                      (<List list={stories.data} onRemoveItem={handleRemoveStory}/>)}
         
       </div>
   )

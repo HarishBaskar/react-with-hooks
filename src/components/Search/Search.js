@@ -18,8 +18,8 @@ const search = ({search, onSearch, children, id, isFocused}) => {
                 type="text" 
                 value={search} 
                 onChange={onSearch}/>
+            &nbsp;
             <hr />
-            <p>Searching for: {search ? search : null} </p> 
         </>
     )
 }
