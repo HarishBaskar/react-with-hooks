@@ -20,7 +20,6 @@ const search = ({search, onSearch, children, id, isFocused, onButtonClick}) => {
                 onChange={onSearch}/>
             &nbsp;
             <button type="button" disabled={!search} onClick={onButtonClick}>Search</button>
-            <p><strong>Searching for: </strong>{search ? search : null} </p> 
             <hr />
         </>
     )

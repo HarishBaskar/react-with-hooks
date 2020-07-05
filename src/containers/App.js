@@ -8,6 +8,7 @@ import { useSemiPersistentState,
           STORIES_FETCH_SUCCESS,
           API_ENDPOINT } from '../Constants/Constants';
 import { storiesReducer } from '../Reducers/Reducers';
+import axios from 'axios';
 
 const App = () => 
 {
@@ -32,12 +33,11 @@ const App = () =>
     }
 
     dispatchStories({type: STORIES_FETCH_INIT});
-    fetch(url)
-        .then(response => response.json())
+        axios.get(url)
         .then(result => {
             dispatchStories({
               type: STORIES_FETCH_SUCCESS,
-              payload: result.hits
+              payload: result.data.hits
             });
         })
         .catch(() => dispatchStories({ type: STORIES_FETCH_FAILURE}) )
@@ -53,10 +53,6 @@ const App = () =>
       payload: item
     })
   };
-
-  const filteredStories = stories.data.filter((story,index) =>{
-    return story.title.toLowerCase().includes(searchTerm.toLowerCase());
-  });
     
   return(
       <div className="App">
