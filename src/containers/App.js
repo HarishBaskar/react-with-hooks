@@ -19,9 +19,14 @@ const App = () =>
 
   const [stories, dispatchStories] = React.useReducer(storiesReducer, { data: [], isLoading: false, isError: false});
 
-  React.useEffect(() => {
+  const handleFetchedStories = React.useCallback(() => {
+    if(searchTerm === '')
+    {
+      return;
+    }
+
     dispatchStories({type: STORIES_FETCH_INIT});
-    fetch(`${API_ENDPOINT}react`)
+    fetch(`${API_ENDPOINT}${searchTerm}`)
         .then(response => response.json())
         .then(result => {
             dispatchStories({
@@ -30,7 +35,11 @@ const App = () =>
             });
         })
         .catch(() => dispatchStories({ type: STORIES_FETCH_FAILURE}) )
-  }, []);
+  }, [searchTerm])
+
+  React.useEffect(() => {
+    handleFetchedStories();
+  }, [handleFetchedStories]);
   
   const handleRemoveStory = item => {
     dispatchStories({
@@ -55,7 +64,7 @@ const App = () =>
         <hr/>
         {stories.isError && <p>Something went wrong....</p>}
         { stories.isLoading ? (<p>Please wait, data is loading...</p>) : 
-                      (<List list={filteredStories} onRemoveItem={handleRemoveStory}/>)}
+                      (<List list={stories.data} onRemoveItem={handleRemoveStory}/>)}
         
       </div>
   )
