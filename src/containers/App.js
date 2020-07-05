@@ -1,6 +1,6 @@
 import React from 'react';
 import List from '../components/List/List';
-import Search from '../components/Search/Search';
+import SearchForm from '../components/SearchForm/SearchForm';
 import { useSemiPersistentState, 
           REMOVE_STORY,
           STORIES_FETCH_FAILURE,
@@ -33,7 +33,7 @@ const App = () =>
     }
 
     dispatchStories({type: STORIES_FETCH_INIT});
-    
+
     try
     {
       const result = await axios.get(url);
@@ -62,13 +62,13 @@ const App = () =>
   return(
       <div className="App">
         <h1>My Hacker Stories</h1>
-        <Search id="search" 
+        <SearchForm id="search" 
                 search={searchTerm} 
                 onSearch={handleSearch}
                 isFocused={true}
-                onButtonClick={handleButtonSubmit}>
+                onFormSubmit={handleButtonSubmit}>
                 <strong>Search: </strong>
-        </Search>
+        </SearchForm>
         <hr/>
         {stories.isError && <p>Something went wrong....</p>}
         { stories.isLoading ? (<p>Please wait, data is loading...</p>) : 
