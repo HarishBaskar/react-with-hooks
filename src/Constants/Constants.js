@@ -42,4 +42,6 @@ export const STORIES_FETCH_INIT = "STORIES_FETCH_INIT";
 
 export const STORIES_FETCH_SUCCESS = "STORIES_FETCH_SUCCESS";
 
+export const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
+
 
