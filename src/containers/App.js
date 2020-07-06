@@ -9,6 +9,7 @@ import { useSemiPersistentState,
           API_ENDPOINT } from '../Constants/Constants';
 import { storiesReducer } from '../Reducers/Reducers';
 import axios from 'axios';
+import styles from  './App.module.css';
 
 const App = () => 
 {
@@ -22,8 +23,9 @@ const App = () =>
 
   const [url, setUrl] = React.useState(`${API_ENDPOINT}${searchTerm}`);
 
-  const handleButtonSubmit = () => {
+  const handleButtonSubmit = (event) => {
     setUrl(`${API_ENDPOINT}${searchTerm}`);
+    event.preventDefault();
   }
 
   const handleFetchedStories = React.useCallback( async () => {
@@ -60,8 +62,8 @@ const App = () =>
   };
     
   return(
-      <div className="App">
-        <h1>My Hacker Stories</h1>
+      <div className={styles.container}>
+        <h1 className={styles.headlineprimary}>My Hacker Stories</h1>
         <SearchForm id="search" 
                 search={searchTerm} 
                 onSearch={handleSearch}
