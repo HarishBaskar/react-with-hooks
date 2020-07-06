@@ -1,4 +1,6 @@
 import React from 'react';
+import style from './List.module.css';
+import { ReactComponent as Check } from '../../SVG/check.svg';
 
 const List = ({list, onRemoveItem}) => {
     const newlist = list.map((item,index) => 
@@ -15,18 +17,23 @@ const List = ({list, onRemoveItem}) => {
 
 const Item = ({item, onRemoveItem}) => {
   return(
-      <div>
-        <span>Title: {item.title}</span>
+      <div className={style.item}>
+        <span style={{width: '40%'}}>
+            <a href={item.url}>{item.title}</a>
+        </span>
+        <span style={{width: '30%'}}>Author: {item.author}</span>
         <br/>
-        <span><a href={item.url}>{item.title}</a></span>
+        <span style={{width: '10%'}}>Comments: {item.num_comments}</span>
         <br/>
-        <span>Author: {item.author}</span>
+        <span style={{width: '10%'}}>Points: {item.points}</span>
         <br/>
-        <span>Comments: {item.num_comments}</span>
-        <br/>
-        <span>Points: {item.points}</span>
-        <br/>
-        <button onClick={() => onRemoveItem(item)}>Delete item</button>
+        <span style={{width: '10%'}}>
+            <button className={`${style.button} ${style.buttonsmall}`}
+                onClick={() => onRemoveItem(item)}>Dismiss
+            &nbsp;
+            <Check height="18px" width="18px" />
+            </button>
+        </span>
     </div>
   )
 }
