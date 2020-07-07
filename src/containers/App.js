@@ -13,6 +13,8 @@ import styles from  './App.module.css';
 
 const App = () => 
 {
+  console.log("Inside App");
+
   const [searchTerm, setSearchTerm] = useSemiPersistentState('search', 'React');
 
   const handleSearch = event => {
@@ -54,12 +56,12 @@ const App = () =>
     handleFetchedStories();
   }, [handleFetchedStories]);
   
-  const handleRemoveStory = item => {
+  const handleRemoveStory = React.useCallback(item => {
     dispatchStories({
       type: REMOVE_STORY,
-      payload: item
-    })
-  };
+      payload: item,
+    });
+  }, []);
     
   return(
       <div className={styles.container}>
@@ -67,7 +69,7 @@ const App = () =>
         <SearchForm id="search" 
                 search={searchTerm} 
                 onSearch={handleSearch}
-                isFocused={true}
+                isFocused={false}
                 onFormSubmit={handleButtonSubmit}>
                 <strong>Search: </strong>
         </SearchForm>
