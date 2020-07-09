@@ -8,11 +8,11 @@ const Item = ({item, onRemoveItem}) => {
           <span style={{width: '40%'}}>
               <a href={item.url}>{item.title}</a>
           </span>
-          <span style={{width: '30%'}}>Author: {item.author}</span>
+          <span style={{width: '30%'}}>{item.author}</span>
           <br/>
-          <span style={{width: '10%'}}>Comments: {item.num_comments}</span>
+          <span style={{width: '10%', textAlign: 'center'}}>{item.num_comments}</span>
           <br/>
-          <span style={{width: '10%'}}>Points: {item.points}</span>
+          <span style={{width: '10%'}}>{item.points}</span>
           <br/>
           <span style={{width: '10%'}}>
               <button className={`${style.button} ${style.buttonsmall}`}
