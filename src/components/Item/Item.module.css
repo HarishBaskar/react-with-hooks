@@ -37,4 +37,31 @@
     fill: #ffffff;
     stroke: #ffffff;
   }
+
+  @media screen and (max-width: 767px) {
+    .item {
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      width: auto;
+      padding-bottom: 5px;
+      }
+
+      .button {
+        background: transparent;
+        border: 1px solid #171212;
+        padding: 3px;
+        cursor: pointer;
+        transition: all 0.1s ease-in;
+      }
+
+      .buttonsmall {
+        font-size: 8px;
+        padding: 5px;
+      }
+
+    .item span{
+      width: 50px !important;
+    }
+  }
   

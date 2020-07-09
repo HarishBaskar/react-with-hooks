@@ -16,9 +16,9 @@ const Item = ({item, onRemoveItem}) => {
           <br/>
           <span style={{width: '10%'}}>
               <button className={`${style.button} ${style.buttonsmall}`}
-                  onClick={() => onRemoveItem(item)}>Dismiss
+                  onClick={() => onRemoveItem(item)}>Delete
               &nbsp;
-              <Check height="18px" width="18px" />
+              <Check height="10px" width="10px" />
               </button>
           </span>
       </div>

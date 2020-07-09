@@ -8,9 +8,17 @@ code {
     monospace;
 }
 
-html{
-  background: #83a4d4; /* fallback for old browsers */
-    background: linear-gradient(to left, #b6fbff, #83a4d4);
-  
-    color: #171212;
+html {
+  background-color: white;
+  background-image: linear-gradient(to top left, #6D6027, #D3CBB8);
+  color: black;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  min-height: 100vh;
+  min-width: 300px;
+  overflow-x: hidden;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
