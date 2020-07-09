@@ -7,3 +7,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+html{
+  background: #83a4d4; /* fallback for old browsers */
+    background: linear-gradient(to left, #b6fbff, #83a4d4);
+  
+    color: #171212;
+}

@@ -58,6 +58,11 @@ export const STORIES_FETCH_SUCCESS = "STORIES_FETCH_SUCCESS";
 
 export const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
+export const API_BASE = 'https://hn.algolia.com/api/v1';
+export const API_SEARCH = '/search';
+export const PARAM_SEARCH = 'query=';
+export const PARAM_PAGE = 'page=';
+
 export const SORTS = {
   NONE: (list, sortOrder) => list,
   TITLE: (list, sortOrder) => sortOrder ? sortBy(list, 'title') : sortBy(list, 'title').reverse(),
