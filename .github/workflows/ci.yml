@@ -2,10 +2,10 @@ name: react-with-hooks-ci
 on:
   push:
     branches:
-      - Search-App-Maintenance
+      - Test
   pull_request:
     branches:
-      - Search-App-Maintenance
+      - Test
 jobs:
   build:
     runs-on: ubuntu-latest
