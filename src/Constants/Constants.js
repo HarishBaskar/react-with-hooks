@@ -1,4 +1,5 @@
 import React from 'react';
+import { sortBy } from 'lodash';
 
 export const initialStories = [
     {
@@ -21,12 +22,25 @@ export const initialStories = [
 
 
 export const useSemiPersistentState = (key, initialState) => {
+
+    const isMounted = React.useRef(false);
+
     const [value, setValue] = React.useState(
       localStorage.getItem(key) || initialState
     );
   
     React.useEffect(() => {
-      localStorage.setItem(key, value);
+
+      if(!isMounted.current)
+      {
+        isMounted.current = true;
+      }
+      else
+      {
+        console.log("Inside useEffect");
+        localStorage.setItem(key, value);
+      }
+      
     }, [value, key]);
   
     return [value, setValue];
@@ -43,5 +57,13 @@ export const STORIES_FETCH_INIT = "STORIES_FETCH_INIT";
 export const STORIES_FETCH_SUCCESS = "STORIES_FETCH_SUCCESS";
 
 export const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
+
+export const SORTS = {
+  NONE: (list, sortOrder) => list,
+  TITLE: (list, sortOrder) => sortOrder ? sortBy(list, 'title') : sortBy(list, 'title').reverse(),
+  AUTHOR: (list, sortOrder) => sortOrder ? sortBy(list, 'author') : sortBy(list, 'author').reverse(),
+  COMMENT: (list, sortOrder) => sortOrder ? sortBy(list, 'num_comments') : sortBy(list, 'num_comments').reverse(),
+  POINT: (list, sortOrder) => sortOrder ? sortBy(list, 'points') : sortBy(list, 'points').reverse()
+}
 
 
