@@ -20,4 +20,37 @@
     fill: #ffffff;
     stroke: #ffffff;
   }
-  
+
+  @media screen and (max-width: 767px) {
+    .button {
+      background: transparent;
+      border: 1px solid #171212;
+      padding: 2px;
+      cursor: pointer;
+      width: auto;
+      font-size: 50%;
+      transition: all 0.1s ease-in;
+    }
+
+    .button:hover {
+      background: #171212;
+      color: #ffffff;
+    }
+
+    .button:hover > svg > g {
+      fill: #ffffff;
+      stroke: #ffffff;
+    }
+
+    .item {
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      width: auto;
+      padding-bottom: 5px;
+    }
+
+    .item span{
+      width: 50px !important;
+    }
+  }
