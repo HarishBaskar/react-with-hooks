@@ -15,7 +15,7 @@ import axios from 'axios';
 import styles from  './App.module.css';
 import LastSearch from '../components/LastSearches/LastSearches';
 
-const App = () => 
+const HackerSearchApp = () => 
 {
   console.log("Inside App");
 
@@ -140,4 +140,4 @@ const App = () =>
   )
 }
 
-export default App;
+export default HackerSearchApp;
