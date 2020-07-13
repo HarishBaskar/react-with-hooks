@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {SignUpLink} from '../SignUp';
 import {withRouter} from 'react-router-dom';
 import {compose} from 'recompose';
 import {withFirebase} from '../Firebase/index';
@@ -9,9 +8,7 @@ import Form from '../Form/Form';
 const SignInPage = () => {
     return(
         <div>
-            <h1>Signin page</h1>
             <SignInForm/>
-            <SignUpLink/>
         </div>
     )
 };
@@ -48,6 +45,8 @@ class SignInFormBase extends Component{
 
         const isInvalid = password === '' || email === '';
 
+        const additionalLinks = {SignupLink : true, ForgotLink : true};
+
         const inputParameters = [
             {name: "email", value: email, type: "text", placeholder: "Email Address"}, 
             {name: "password", value: password, type: "password", placeholder: "Password"},
@@ -60,6 +59,7 @@ class SignInFormBase extends Component{
                     inputParameters={inputParameters}
                     invalidCheck={isInvalid}
                     errorMessage={error}
+                    additionalLinks = {additionalLinks}
                     buttonName="Sign In"/>
             </div>
         )

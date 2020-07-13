@@ -58,6 +58,7 @@ class SignUpFormBase extends Component {
       {name: "passwordTwo", value: passwordTwo, type: "password", placeholder: "Confirm Password"}
     ];
 
+    const additionalLinks = {SignupLink : false, ForgotLink : false};
 
     return (
       <>
@@ -66,6 +67,7 @@ class SignUpFormBase extends Component {
             inputParameters={inputParameters}
             invalidCheck={isInvalid}
             errorMessage={error}
+            additionalLinks={additionalLinks}
             buttonName="Sign Up"/>
       </>
     );

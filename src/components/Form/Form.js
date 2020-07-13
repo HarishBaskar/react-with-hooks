@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './Form.module.css';
+import {PasswordForgetLink} from '../PasswordForget/index';
+import {SignUpLink} from '../SignUp';
 
-const Form = ({inputParameters, onFormSubmit, onInputChange, invalidCheck, errorMessage, buttonName}) => {
+const Form = ({inputParameters, onFormSubmit, onInputChange, invalidCheck, errorMessage, buttonName, additionalLinks}) => {
 
     const inputFields = inputParameters.map((inputObject, index) => {
         return(
@@ -26,6 +28,10 @@ const Form = ({inputParameters, onFormSubmit, onInputChange, invalidCheck, error
                 <button disabled={invalidCheck} type="submit">{buttonName}</button>
                 {errorMessage && <p>{errorMessage.message}</p>}
             </form>
+            <div className={styles.linkcontainer}>
+                {additionalLinks.SignupLink ?  <SignUpLink/> : null}
+                {additionalLinks.ForgotLink ? <PasswordForgetLink/> : null}
+            </div>            
         </div>
     )
 }
