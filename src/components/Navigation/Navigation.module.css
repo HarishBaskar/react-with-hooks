@@ -1,5 +1,5 @@
 .navigation{
-    background-color: #F5F5F5;
+    background-color: transparent!important;
 }
 
 .navigation .menu li a{
@@ -16,13 +16,21 @@
   
   .navigation li a {
     display: block;
-    color: #000;
+    color: white!important;
     padding: 8px 16px;
     text-decoration: none;
   }
+
+  .navigation li button{
+      background-color: transparent;
+      border: transparent;
+      margin: 16px;
+      color: white;
+      font-size: 20px;
+  }
   
   /* Change the link color on hover */
-  .navigation li a:hover {
+  .navigation li a:hover, button:hover {
     background-color: black;
     color: #FFFFFF!important;
   }
@@ -40,7 +48,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: transparent;
+    background-color: transparent!important;
     }
     
     .navigation li {
@@ -61,10 +69,18 @@
         font-size: 1.5rem;
     }
     
-    /* Change the link color to #111 (black) on hover */
-    .navigation li a:hover {
-    background-color: black;
-    color: #FFFFFF !important;
+    .navigation li button{
+        background-color: transparent;
+        border: transparent;
+        margin: 16px;
+        color: white;
+        font-size: 20px;
+    }
+    
+    /* Change the link color on hover */
+    .navigation li a:hover, button:hover {
+      background-color: black;
+      color: #FFFFFF!important;
     }
 }
 

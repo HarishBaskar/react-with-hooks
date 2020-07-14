@@ -2,14 +2,15 @@
     padding: 10px 0 20px 0;
     display: flex;
     align-items: baseline;
+    color: white!important;
 }
 
 .button {
     background: transparent;
-    border: 1px solid #171212;
+    border: 1px solid white!important;
     padding: 5px;
     cursor: pointer;
-  
+    color: white!important;
     transition: all 0.1s ease-in;
   }
   
@@ -20,6 +21,7 @@
 
   .buttonlarge {
     padding: 10px;
+    color: white!important;
   }
 
 
@@ -27,8 +29,9 @@
   @media screen and (max-width: 799px) {
     .button {
       background: transparent;
-      border: 1px solid #171212;
+      border: 1px solid white!important;
       padding: 2px;
+      color: white!important;
       cursor: pointer;
       width: auto;
       transition: all 0.1s ease-in;

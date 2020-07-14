@@ -7,7 +7,6 @@ import {PasswordChangeForm} from '../PasswordChange/index';
 
 const AccountPage = () => (
   <div>
-    <h1>Account Page</h1>
     <PasswordChangeForm />
     <PasswordForgotForm />
   </div>

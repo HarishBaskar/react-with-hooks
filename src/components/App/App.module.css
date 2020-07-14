@@ -1,0 +1,21 @@
+.wallpaper {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.wallpaper {
+    background-image: url("../../Images/whale.jpg");
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2;
+    position: fixed;
+}
+
+.content {
+    display: fixed;
+    position: relative;
+}
+

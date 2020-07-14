@@ -7,7 +7,6 @@ import Form from '../Form/Form';
 const PasswordForgotPage = () => {
     return(
         <div>
-            <h1>Fogot Password</h1>
             <PasswordForgotForm/>
         </div>
     )

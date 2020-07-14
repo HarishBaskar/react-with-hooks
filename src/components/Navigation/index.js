@@ -19,20 +19,20 @@ const NavigationAuth = () => {
     return(
         <nav className={styles.navigation}>
             <ul className={styles.menu}>
+                <li className={styles.item}>
+                    <SignOutButton/>
+                </li>
                 <li className={styles.heading}>
                     <Link to={ROUTES.LANDING}>Hacker Stories</Link>
+                </li>
+                <li className={styles.item}>
+                    <Link to={ROUTES.ACCOUNT}>Account</Link>
                 </li>
                 <li className={styles.item}>
                     <Link to={ROUTES.LANDING}>Landing</Link>
                 </li>
                 <li className={styles.item}>
                     <Link to={ROUTES.SEARCH_PAGE}>Home</Link>
-                </li>
-                <li className={styles.item}>
-                    <Link to={ROUTES.ACCOUNT}>Account</Link>
-                </li>
-                <li className={styles.item}>
-                    <SignOutButton/>
                 </li>
             </ul>
         </nav>

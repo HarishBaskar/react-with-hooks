@@ -12,7 +12,7 @@ import { useSemiPersistentState,
           PARAM_PAGE } from '../Constants/Constants';
 import { storiesReducer } from '../Reducers/Reducers';
 import axios from 'axios';
-import styles from  './App.module.css';
+import styles from  './HackerSearch.module.css';
 import LastSearch from '../components/LastSearches/LastSearches';
 import withAuthorization from '../components/Session/withAuthorization';
 
@@ -116,7 +116,7 @@ const HackerSearchApp = () =>
     
   return(
       <div className={styles.container}>
-        <h1 className={styles.headlineprimary}>Hacker Stories</h1>
+        <h1 className={styles.headlineprimary}>Search Stories</h1>
         <SearchForm id="search" 
                 search={searchTerm} 
                 onSearch={handleSearch}

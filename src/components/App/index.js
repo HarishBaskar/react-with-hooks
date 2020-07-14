@@ -12,19 +12,24 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import withAuthentication from '../Session/withAuthentication';
+import Styles from './App.module.css';
 
 const App = () => {
     return(
         <Router>
-            <Navigation/>
-            <Route exact path={ROUTES.LANDING} component={LandingPage} />
-            <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-            <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-            <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-            <Route path={ROUTES.HOME} component={HomePage} />
-            <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-            <Route path={ROUTES.ADMIN} component={AdminPage} />
-            <Route exact path={ROUTES.SEARCH_PAGE} component={HackerSearchApp}/>
+            <div className={Styles.wallpaper}></div>
+            <div className={Styles.content}>
+                <Navigation/>
+                <Route exact path={ROUTES.LANDING} component={LandingPage} />
+                <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+                <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+                <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
+                <Route path={ROUTES.HOME} component={HomePage} />
+                <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+                <Route path={ROUTES.ADMIN} component={AdminPage} />
+                <Route exact path={ROUTES.SEARCH_PAGE} component={HackerSearchApp}/>
+            </div>
+            
         </Router>
     )
 }

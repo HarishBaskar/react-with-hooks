@@ -31,9 +31,10 @@ code {
 }
 
 html {
-  background-color: white;
-  background: white;
-  color: black;
+  background-color: #485461;
+  background: #485461;
+  background-image: linear-gradient(to bottom right,#28313B,#485461);
+  color: white;
   font-family: "Quicksand", sans-serif;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;

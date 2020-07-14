@@ -17,10 +17,10 @@
 
 .button {
     background: transparent;
-    border: 1px solid #171212;
+    border: 1px solid white!important;
     padding: 5px;
     cursor: pointer;
-  
+    color: white!important;
     transition: all 0.1s ease-in;
   }
   
@@ -31,6 +31,11 @@
   
   .buttonsmall {
     padding: 5px;
+    color: white!important;
+  }
+
+  .button > svg > g{
+    fill: white;
   }
 
   .button:hover > svg > g {
@@ -49,7 +54,7 @@
 
       .button {
         background: transparent;
-        border: 1px solid #171212;
+        border: 1px solid white!important;
         padding: 3px;
         cursor: pointer;
         transition: all 0.1s ease-in;
