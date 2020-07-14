@@ -26,7 +26,7 @@ const NavigationAuth = () => {
                     <Link to={ROUTES.LANDING}>Landing</Link>
                 </li>
                 <li className={styles.item}>
-                    <Link to={ROUTES.HOME}>Home</Link>
+                    <Link to={ROUTES.SEARCH_PAGE}>Home</Link>
                 </li>
                 <li className={styles.item}>
                     <Link to={ROUTES.ACCOUNT}>Account</Link>

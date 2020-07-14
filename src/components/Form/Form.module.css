@@ -1,155 +1,99 @@
-.loginbox {
-position: fixed;
-margin-top: 10px;
-left: 50%;
-width: 300px;
-padding: 40px;
-transform: translate(-50%, -50%);
-background: #FFFFFF;
-box-sizing: border-box;
-box-shadow: 0 15px 25px rgba(0,0,0,.6);
-border-radius: 10px;
-}
-
-.loginbox h2 {
-margin: 0 0 30px;
-padding: 0;
-color: black;
-text-align: center;
-letter-spacing: 0.23rem;
-}
-
-.loginbox .userbox {
-position: relative;
-}
-
-.loginbox .userbox input {
-width: 100%;
-padding: 10px 0;
-font-size: 16px;
-color: black;
-margin-bottom: 30px;
-border: none;
-border-bottom: 1.5px solid black !important;
-outline: none;
-background: transparent;
-}
-
-.loginbox .userbox label {
-position: absolute;
-top:0;
-left: 0;
-padding: 10px 0;
-font-size: 16px;
-color: #fff;
-pointer-events: none;
-transition: .5s;
-}
-
-.loginbox .userbox input:focus ~ label,
-.loginbox .userbox input:valid ~ label {
-top: -20px;
-left: 0;
-color: #03e9f4;
-font-size: 12px;
-}
-
-.loginbox button{
-    border: none;
-    cursor: pointer;
-    color: white;
-    background: #295EFF;
-    font-weight: bolder;
-    font-size: 1.23rem;
-    line-height: inherit;
-    border: 1.5px solid #295EFF;
-    border-radius: 18px!important;
-    padding: 6px;
-}
-
-.loginbox button:disabled{
-    color: white!important;
-    opacity: 50%;
-}
-
 @media only screen and (min-width: 768px) {
 
-.loginbox {
-position: absolute;
-top: 60%;
-left: 50%;
-width: 400px;
-padding: 40px;
-transform: translate(-50%, -50%);
-background: #FFFFFF;
-box-sizing: border-box;
-box-shadow: 0 15px 25px rgba(0,0,0,.6);
-border-radius: 10px;
-}
-
-.loginbox h2 {
-margin: 0 0 30px;
-padding: 0;
-color: black;
-text-align: center;
-letter-spacing: 0.23rem;
-}
-
-.loginbox .userbox {
-position: relative;
-}
-
-.loginbox .userbox input {
-width: 100%;
-padding: 10px 0;
-font-size: 16px;
-color: black;
-margin-bottom: 30px;
-border: none;
-border-bottom: 1.5px solid black !important;
-outline: none;
-background: transparent;
-}
-
-.loginbox .userbox label {
-position: absolute;
-top:0;
-left: 0;
-padding: 10px 0;
-font-size: 16px;
-color: #fff;
-pointer-events: none;
-transition: .5s;
-}
-
-.loginbox .userbox input:focus ~ label,
-.loginbox .userbox input:valid ~ label {
-top: -20px;
-left: 0;
-color: #03e9f4;
-font-size: 12px;
-}
-
-.loginbox button{
-    border: none;
-    cursor: pointer;
-    color: white;
-    background: #295EFF;
-    font-weight: bolder;
-    font-size: 1.23rem;
-    line-height: inherit;
-    border: 1.5px solid #295EFF;
-    border-radius: 18px!important;
-    padding: 6px;
-}
-
-.loginbox button:disabled{
-    color: white!important;
-    opacity: 50%;
-}
-
-.linkcontainer{
-    margin-top: 15px;
-}
-
-}
+    .dbform{
+        font-family: 'Open Sans Condensed', arial, sans;
+        width: 400px!important;
+        padding: 30px!important;
+        background: #F7F7F7!important;
+        margin-left: 500px!important;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+        -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+        -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+        color: black!important;
+    
+    }
+    
+    }
+    
+    @media only screen and (min-width: 300px) {
+    
+        .dbform{
+            font-family: 'Open Sans Condensed', arial, sans;
+            width: auto;
+            padding: 30px;
+            background: #F7F7F7!important;
+            margin: 40px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+            -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+            -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+            color: black!important;
+        
+        }
+        
+    }
+    
+    .dbform p{
+        color: red;
+    }
+    .dbform h2{
+        background: #F7F7F7;
+        text-transform: uppercase;
+        font-family: 'Open Sans Condensed', sans-serif;
+        color: black;
+        font-size: 18px;
+        text-align: center!important;
+        font-weight: 100;
+        padding: 20px;
+        margin: -30px -30px 30px -30px;
+    }
+    
+    .dbform input, 
+    .formButton
+    {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        display: block;
+        width: 100%;
+        padding: 7px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        background: transparent;
+        margin-bottom: 10px;
+        font: 16px Arial, Helvetica, sans-serif;
+        height: 45px;
+        color: black;
+    }
+    .dbform textarea{
+        resize:none;
+        overflow: hidden;
+    }
+    .dbform input[type="button"], 
+    .dbform input[type="submit"],
+    .formButton{
+        -moz-box-shadow: inset 0px 1px 0px 0px #6FB554;
+        -webkit-box-shadow: inset 0px 1px 0px 0px #6FB554;
+        box-shadow: inset 0px 1px 0px 0px #6FB554;
+        background-color: #6FB554;
+        border: 1px solid #6FB554;
+        display: inline-block;
+        cursor: pointer;
+        color: #FFFFFF!important;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 14px;
+        padding: 8px 18px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    .dbform input[type="button"]:hover, 
+    .dbform input[type="submit"]:hover,
+    .formButton:hover {
+        background-color: #6FB554;
+        color: #323436!important;
+    }
+    
+    .inputsection{
+        text-align: left;
+        padding: 10px;
+    }

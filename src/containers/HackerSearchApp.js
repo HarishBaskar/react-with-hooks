@@ -14,6 +14,8 @@ import { storiesReducer } from '../Reducers/Reducers';
 import axios from 'axios';
 import styles from  './App.module.css';
 import LastSearch from '../components/LastSearches/LastSearches';
+import withAuthorization from '../components/Session/withAuthorization';
+
 
 const HackerSearchApp = () => 
 {
@@ -140,4 +142,6 @@ const HackerSearchApp = () =>
   )
 }
 
-export default HackerSearchApp;
+const condition = authUser => authUser != null
+
+export default withAuthorization(condition)(HackerSearchApp);

@@ -7,7 +7,7 @@ const Form = ({inputParameters, onFormSubmit, onInputChange, invalidCheck, error
 
     const inputFields = inputParameters.map((inputObject, index) => {
         return(
-            <div className={styles.userbox}>
+            <div className={styles.inputsection}>
                 <input key={`inputValue${index}`}
                 name={inputObject.name}
                 value={inputObject.value}
@@ -21,11 +21,11 @@ const Form = ({inputParameters, onFormSubmit, onInputChange, invalidCheck, error
         
 
     return(
-        <div className={styles.loginbox}>
+        <div className={styles.dbform}>
             <h2>{buttonName}</h2>
             <form onSubmit={onFormSubmit}>
                 {inputFields}
-                <button disabled={invalidCheck} type="submit">{buttonName}</button>
+                <button className={styles.formButton} disabled={invalidCheck} type="submit">{buttonName}</button>
                 {errorMessage && <p>{errorMessage.message}</p>}
             </form>
             <div className={styles.linkcontainer}>

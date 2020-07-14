@@ -1,5 +1,5 @@
 .navigation{
-    background-color: #FFFFFF;
+    background-color: #F5F5F5;
 }
 
 .navigation .menu li a{
@@ -11,7 +11,7 @@
     margin: 0;
     padding: 0;
     width: auto;
-    background-color: #FFFFFF;
+    background-color: transparent;
   }
   
   .navigation li a {
@@ -30,7 +30,7 @@
 @media only screen and (min-width: 768px) {
 
     .navigation{
-        background-color: #FFFFFF;
+        background-color: transparent;
         height: 60px;
         margin-bottom: 10px;
     }
@@ -40,7 +40,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #FFFFFF;
+    background-color: transparent;
     }
     
     .navigation li {
