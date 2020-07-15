@@ -1,0 +1,87 @@
+.navigation{
+    background-color: transparent!important;
+}
+
+.navigation .menu li a{
+    text-decoration: none;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    background-color: transparent;
+  }
+  
+  .navigation li a {
+    display: block;
+    color: white!important;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  .navigation li button{
+      background-color: transparent;
+      border: transparent;
+      margin: 16px;
+      color: white;
+      font-size: 20px;
+  }
+  
+  /* Change the link color on hover */
+  .navigation li a:hover, button:hover {
+    background-color: black;
+    color: #FFFFFF!important;
+  }
+
+@media only screen and (min-width: 768px) {
+
+    .navigation{
+        background-color: transparent;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent!important;
+    }
+    
+    .navigation li {
+        float: right;
+    }
+    
+    .navigation li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 120%;
+    }
+
+    .heading{
+        float: left!important;
+        font-size: 1.5rem;
+    }
+    
+    .navigation li button{
+        background-color: transparent;
+        border: transparent;
+        margin: 16px;
+        color: white;
+        font-size: 20px;
+    }
+    
+    /* Change the link color on hover */
+    .navigation li a:hover, button:hover {
+      background-color: black;
+      color: #FFFFFF!important;
+    }
+}
+
+

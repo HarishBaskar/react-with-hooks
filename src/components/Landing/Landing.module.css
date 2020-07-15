@@ -1,0 +1,21 @@
+.textcontainer{
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 50em;
+    padding: 4em 1em;
+    margin-top: 100px;
+    color: #a7adba;
+    text-shadow: 2px 2px 6px grey!important;
+}
+
+.textcontainer h1{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.textcontainer a{
+    color: #e81c4f;
+    text-shadow: none!important;
+}

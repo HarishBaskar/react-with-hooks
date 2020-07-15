@@ -1,0 +1,98 @@
+@media only screen and (min-width: 768px) {
+    .dbform{
+        font-family: 'Open Sans Condensed', arial, sans;
+        width: 400px!important;
+        padding: 30px!important;
+        margin-left: auto!important;
+        margin-right: auto!important;
+        margin-top: 50px;
+        background: transparent!important;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+        -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+        -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+        color: black!important;
+    }
+}
+    
+    @media only screen and (min-width: 300px) {
+        .dbform{
+            font-family: 'Open Sans Condensed', arial, sans;
+            width: auto;
+            padding: 30px;
+            background: transparent!important;
+            margin-left: auto!important;
+            margin-right: auto!important;
+            margin-top: 50px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+            -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+            -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+            color: black!important;
+        }
+        
+    }
+    
+    .dbform p, a{
+        color: white;
+    }
+    .dbform h2{
+        background: transparent!important;
+        text-transform: uppercase;
+        font-family: 'Open Sans Condensed', sans-serif;
+        color: white;
+        font-size: 18px;
+        text-align: center!important;
+        font-weight: 100;
+        padding: 20px;
+        margin: -30px -30px 30px -30px;
+    }
+    
+    .dbform input, 
+    .formButton
+    {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        display: block;
+        width: 100%;
+        padding: 7px;
+        border: none;
+        border-bottom: 2px solid #ddd;
+        background: transparent;
+        margin-bottom: 10px;
+        font: 16px Arial, Helvetica, sans-serif;
+        height: 45px;
+        color: white!important;
+    }
+    .dbform textarea{
+        resize:none;
+        overflow: hidden;
+    }
+    .dbform input[type="button"], 
+    .dbform input[type="submit"],
+    .formButton{
+        -moz-box-shadow: inset 0px 1px 0px 0px #6FB554;
+        -webkit-box-shadow: inset 0px 1px 0px 0px #6FB554;
+        box-shadow: inset 0px 1px 0px 0px #6FB554;
+        background-color: #6FB554;
+        border: 1px solid #6FB554;
+        display: inline-block;
+        cursor: pointer;
+        color: #FFFFFF!important;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 14px;
+        padding: 8px 18px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    .dbform input[type="button"]:hover, 
+    .dbform input[type="submit"]:hover,
+    .formButton:hover {
+        background-color: #6FB554;
+        color: #323436!important;
+    }
+    
+    .inputsection{
+        text-align: left;
+        padding: 10px;
+    }

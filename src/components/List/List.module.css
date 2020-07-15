@@ -1,9 +1,9 @@
 .button {
     background: transparent;
-    border: 1px solid #171212;
+    border: 1px solid white!important;
     padding: 5px;
     cursor: pointer;
-  
+    color: white!important;
     transition: all 0.1s ease-in;
   }
   
@@ -14,6 +14,7 @@
   
   .buttonsmall {
     padding: 5px;
+    border: 1px solid white!important;
   }
 
   .button:hover > svg > g {
@@ -21,15 +22,24 @@
     stroke: #ffffff;
   }
 
+  .button > svg > g {
+    fill: #ffffff;
+  }
+
   @media screen and (max-width: 767px) {
     .button {
       background: transparent;
-      border: 1px solid #171212;
+      border: 1px solid white!important;
       padding: 2px;
       cursor: pointer;
       width: auto;
       font-size: 50%;
       transition: all 0.1s ease-in;
+    }
+
+    .buttonsmall {
+      padding: 5px;
+      border: 1px solid white!important;
     }
 
     .button:hover {
@@ -40,6 +50,10 @@
     .button:hover > svg > g {
       fill: #ffffff;
       stroke: #ffffff;
+    }
+
+    .button > svg > g {
+      fill: #ffffff;
     }
 
     .item {

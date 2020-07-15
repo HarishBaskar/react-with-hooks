@@ -1,9 +1,10 @@
 .button {
     background: transparent;
-    border: 1px solid #171212;
+    border: 1px solid white;
     padding: 5px;
     cursor: pointer;
     margin: 4px;
+    color: white;
     transition: all 0.1s ease-in;
   }
   
@@ -19,4 +20,8 @@
   .button:hover > svg > g {
     fill: #ffffff;
     stroke: #ffffff;
+  }
+
+  .button > svg > g {
+    fill: #ffffff;
   }
